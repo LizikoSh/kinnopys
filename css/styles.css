@@ -752,7 +752,7 @@ tr:last-child td { border-bottom: 0; }
   .hero-title { font-size: clamp(3.2rem, 16vw, 4.5rem); }
   .hero-text { font-size: 1rem; }
   .hero-actions { flex-direction: column; align-items: stretch; }
-.home-page .hero-actions { margin-top: 56px; }
+.home-page .hero-actions { margin-top: 200px; }
 .button { width: 100%; }
 .hero-image-wrap { height: 390px; }
 
@@ -1306,4 +1306,167 @@ select { font: inherit; }
     margin: 10px 10px -54px 0;
   }
   .coat-details div { grid-template-columns: 74px 1fr; }
+}
+
+/* Оновлена шапка та хероблок: липень 2026 */
+.header-inner {
+  min-height: 107px;
+}
+.logo {
+  display: grid;
+  gap: 5px;
+  align-content: center;
+}
+.logo-kicker {
+  display: block;
+  padding-left: 2px;
+  color: var(--accent-dark);
+  font-size: .64rem;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.logo-main {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+}
+.logo img {
+  width: 60px;
+  height: 60px;
+}
+.logo-title {
+  font-size: 1.72rem;
+  line-height: 1;
+}
+.menu-toggle {
+  width: 54px;
+  height: 54px;
+}
+.menu-toggle svg {
+  width: 25px;
+  height: 25px;
+}
+.home-page .logo-kicker {
+  color: rgba(255, 255, 255, .72);
+}
+
+/* На головній назва й рубрикатор перенесені в шапку */
+.home-page .hero-content {
+  width: 58%;
+  padding-top: clamp(116px, 15vh, 168px);
+}
+.home-page .hero-text {
+  max-width: 520px;
+  margin-top: 0;
+  font-size: clamp(1.22rem, 1.7vw, 1.46rem);
+}
+.home-page .hero-image-wrap {
+  top: -142px;
+  right: -48%;
+  width: 94%;
+  height: calc(100% + 142px);
+}
+.home-page .hero-image {
+  object-position: right bottom;
+}
+
+@media (max-width: 1080px) {
+  .home-page .hero-content {
+    width: 62%;
+    padding-top: 124px;
+  }
+  .home-page .hero-image-wrap {
+    right: -54%;
+    width: 102%;
+  }
+}
+
+@media (max-width: 860px) {
+  .header-inner {
+    min-height: 94px;
+  }
+  .logo {
+    gap: 4px;
+  }
+  .logo-kicker {
+    font-size: .56rem;
+    letter-spacing: .11em;
+  }
+  .logo-main {
+    gap: 11px;
+  }
+  .logo img {
+    width: 52px;
+    height: 52px;
+  }
+  .logo-title {
+    font-size: 1.48rem;
+  }
+  .menu-toggle {
+    width: 52px;
+    height: 52px;
+  }
+  .home-page .hero-content {
+    width: 100%;
+    padding: 72px 38px 44px;
+  }
+  .home-page .hero-text {
+    max-width: 500px;
+    font-size: 1.18rem;
+  }
+  .home-page .hero-image-wrap {
+    top: 28px;
+    right: -22%;
+    width: 104%;
+    height: calc(100% - 28px);
+  }
+}
+
+@media (max-width: 640px) {
+  .header-inner {
+    min-height: 94px;
+  }
+  .logo-kicker {
+    display: block;
+    font-size: .5rem;
+    letter-spacing: .09em;
+  }
+  .logo-main {
+    gap: 9px;
+  }
+  .logo img {
+    width: 52px;
+    height: 52px;
+  }
+  .logo-title {
+    font-size: 1.45rem;
+  }
+  .home-page .hero-card {
+    min-height: 720px;
+  }
+  .home-page .hero-content {
+    padding: 58px 22px 34px;
+  }
+  .home-page .hero-text {
+    max-width: 88%;
+    margin-top: 0;
+    font-size: 1.05rem;
+    line-height: 1.72;
+  }
+  .home-page .hero-actions {
+    margin-top: 250px;
+  }
+  .home-page .hero-image-wrap {
+    top: 0;
+    right: -38%;
+    width: 146%;
+    height: 100%;
+  }
+  .home-page .hero-image {
+    object-position: right 48%;
+    filter: brightness(.76) saturate(.88) contrast(1.02) drop-shadow(-8px 14px 18px rgba(43, 22, 13, .10));
+  }
 }
