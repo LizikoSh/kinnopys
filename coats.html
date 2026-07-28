@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Одна сторінка з 57 мастями, відтінками, генетичними освітленнями, рябими та леопардовими патернами коней.">
+  <meta name="theme-color" content="#d8a576">
+  <title>Масті коней — Кіннопис</title>
+  <link rel="icon" href="assets/icons/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="coats-page">
+<a class="skip-link" href="#main">Перейти до вмісту</a>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="index.html" aria-label="Кіннопис — головна">
+      <img src="assets/icons/logo.svg" alt="" width="46" height="46">
+      <span class="logo-copy">
+        <span class="logo-title">Кіннопис</span>
+        <span class="logo-subtitle">про коней і для людей</span>
+      </span>
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-navigation" aria-label="Відкрити меню">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+    <nav class="main-nav" id="main-navigation" aria-label="Головна навігація">
+      <a href="breeds.html">Довідник порід</a>
+      <a href="coats.html">Масті</a>
+      <a href="terminology.html">Термінологія</a>
+      <a href="facts.html">Цікаві факти</a>
+      <a href="stories.html">Історії</a>
+      <a href="sport.html">Кінний спорт</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero-card">
+      <div class="breadcrumbs"><a href="index.html">Головна</a><span>·</span><span>Масті</span></div>
+      <p class="eyebrow">Колір і генетичні патерни</p>
+      <h1 class="page-title">Масті коней</h1>
+      <p class="page-lead">Усі 57 масті, відтінки, освітлення, рябі й леопардові патерни зібрано на одній сторінці та розподілено за тематичними групами.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section catalog-section">
+  <div class="container">
+    <div class="coat-toolbar">
+      <label class="catalog-field catalog-search-field">
+        <span>Пошук по сторінці</span>
+        <input class="search-field" id="coat-search" type="search" placeholder="Наприклад: гніда, кремелло, тобіано…" autocomplete="off">
+      </label>
+      <p class="coat-count" id="coat-count" aria-live="polite">Завантаження…</p>
+    </div>
+    <nav class="coat-jump-nav" id="coat-jump-nav" aria-label="Групи мастей"></nav>
+    <div id="coat-sections"></div>
+    <div class="empty-state catalog-empty" id="coat-empty">Мастей за цим запитом не знайдено.</div>
+    <div class="note">
+      <strong>Генетичні позначення спрощені:</strong> один зовнішній фенотип іноді може мати кілька генетичних механізмів, а частина модифікаторів досі вивчається.
+    </div>
+  </div>
+</section>
+
+<section class="section section-soft">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">Розпізнавальні ознаки</p>
+        <h2 class="section-title">Білі відмітини</h2>
+        <p class="section-intro">Відмітини не змінюють базову масть, але допомагають точно описати конкретного коня.</p>
+      </div>
+    </div>
+    <div class="marking-list">
+      <div class="marking-item"><span class="marking-symbol">✦</span><h3>Зірка</h3><p>Біла пляма різної форми на лобі.</p></div>
+      <div class="marking-item"><span class="marking-symbol">│</span><h3>Проточина</h3><p>Вузька біла смуга вздовж перенісся.</p></div>
+      <div class="marking-item"><span class="marking-symbol">▮</span><h3>Лисина</h3><p>Широка біла смуга, що охоплює значну частину морди.</p></div>
+      <div class="marking-item"><span class="marking-symbol">▱</span><h3>Шкарпетка</h3><p>Біла ділянка на нижній частині однієї чи кількох ніг.</p></div>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <h2 class="footer-title">Кіннопис</h2>
+      <p class="footer-copy">Пізнавальний простір про породи, масті, терміни, історії та кінний спорт. Матеріали мають ознайомчий характер.</p>
+    </div>
+    <div>
+      <h2 class="footer-title">Розділи</h2>
+      <div class="footer-links">
+        <a href="breeds.html">Довідник порід</a>
+        <a href="coats.html">Масті</a>
+        <a href="terminology.html">Термінологія</a>
+        <a href="sport.html">Кінний спорт</a>
+      </div>
+    </div>
+    <div>
+      <h2 class="footer-title">Про проєкт</h2>
+      <div class="footer-links">
+        <a href="facts.html">Цікаві факти</a>
+        <a href="stories.html">Історії</a>
+        <a href="sources.html">Використані джерела</a>
+      </div>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>© <span data-year></span> Кіннопис</span>
+    <span>Статичний сайт для GitHub Pages і Vercel</span>
+  </div>
+</footer>
+<button class="back-to-top" type="button" aria-label="Повернутися нагору">↑</button>
+<script src="js/main.js"></script>
+<script src="js/coats.js"></script>
+</body>
+</html>

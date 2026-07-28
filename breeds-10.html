@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Каталог із 398 порід і популяцій коней та поні: сторінка 10 з 14, пошук, фільтри та докладні модальні картки.">
+  <meta name="theme-color" content="#d8a576">
+  <title>Довідник порід — сторінка 10 — Кіннопис</title>
+  <link rel="icon" href="assets/icons/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="breeds-page" data-catalog-page="10">
+<a class="skip-link" href="#main">Перейти до вмісту</a>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="index.html" aria-label="Кіннопис — головна">
+      <img src="assets/icons/logo.svg" alt="" width="46" height="46">
+      <span class="logo-copy">
+        <span class="logo-title">Кіннопис</span>
+        <span class="logo-subtitle">про коней і для людей</span>
+      </span>
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-navigation" aria-label="Відкрити меню">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+    </button>
+    <nav class="main-nav" id="main-navigation" aria-label="Головна навігація">
+      <a href="breeds.html">Довідник порід</a>
+      <a href="coats.html">Масті</a>
+      <a href="terminology.html">Термінологія</a>
+      <a href="facts.html">Цікаві факти</a>
+      <a href="stories.html">Історії</a>
+      <a href="sport.html">Кінний спорт</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero-card">
+      <div class="breadcrumbs"><a href="index.html">Головна</a><span>·</span><span>Довідник порід — сторінка 10</span></div>
+      <p class="eyebrow">Великий каталог</p>
+      <h1 class="page-title">Породи коней</h1>
+      <p class="page-lead">У каталозі — усі 398 записи з таблиці: коні, поні, локальні та здичавілі популяції, а також історичні породи. На сторінці показується до 30 карток.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section catalog-section">
+  <div class="container">
+    <noscript><div class="note"><strong>Потрібен JavaScript:</strong> каталог, пошук і модальні вікна формуються з файлу <code>data/breeds.json</code>.</div></noscript>
+
+    <div class="catalog-toolbar" aria-label="Пошук і фільтри порід">
+      <label class="catalog-field catalog-search-field">
+        <span>Пошук</span>
+        <input class="search-field" id="breed-search" type="search" placeholder="Назва, країна, тип або масть…" autocomplete="off">
+      </label>
+      <label class="catalog-field">
+        <span>Категорія</span>
+        <select id="breed-category">
+          <option value="all">Усі</option>
+          <option value="Кінь">Коні</option>
+          <option value="Поні">Поні</option>
+        </select>
+      </label>
+      <label class="catalog-field">
+        <span>Тип</span>
+        <select id="breed-type"><option value="all">Усі типи</option></select>
+      </label>
+      <label class="catalog-field">
+        <span>Походження</span>
+        <select id="breed-origin"><option value="all">Усі країни й регіони</option></select>
+      </label>
+      <label class="catalog-field">
+        <span>Сортування</span>
+        <select id="breed-sort">
+          <option value="name-asc">Назва: А–Я</option>
+          <option value="name-desc">Назва: Я–А</option>
+          <option value="origin">За походженням</option>
+        </select>
+      </label>
+      <label class="catalog-check">
+        <input id="breed-ukrainian" type="checkbox">
+        <span>Лише українські</span>
+      </label>
+      <button class="catalog-reset" id="breed-reset" type="button">Скинути</button>
+    </div>
+
+    <div class="catalog-status" aria-live="polite">
+      <p id="breed-count">Завантаження каталогу…</p>
+      <p id="breed-page-label"></p>
+    </div>
+
+    <div class="breed-grid" id="breed-grid" aria-live="polite"></div>
+    <div class="empty-state catalog-empty" id="breed-empty">За заданими умовами порід не знайдено.</div>
+    <nav class="pagination" id="breed-pagination" aria-label="Сторінки каталогу"></nav>
+
+    <div class="note">
+      <strong>Примітка:</strong> міжнародні реєстри можуть по-різному класифікувати локальні популяції, типи й окремі породні групи. Посилання на джерело наведено в модальному вікні кожної картки.
+    </div>
+  </div>
+</section>
+</main>
+
+<div class="breed-modal" id="breed-modal" hidden>
+  <div class="breed-modal-backdrop"></div>
+  <section class="breed-modal-panel" role="dialog" aria-modal="true" aria-labelledby="breed-modal-title" aria-describedby="breed-modal-description">
+    <button class="breed-modal-close" id="breed-modal-close" type="button" aria-label="Закрити вікно">×</button>
+    <div id="breed-modal-content"></div>
+  </section>
+</div>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <h2 class="footer-title">Кіннопис</h2>
+      <p class="footer-copy">Пізнавальний простір про породи, масті, терміни, історії та кінний спорт. Матеріали мають ознайомчий характер.</p>
+    </div>
+    <div>
+      <h2 class="footer-title">Розділи</h2>
+      <div class="footer-links">
+        <a href="breeds.html">Довідник порід</a>
+        <a href="coats.html">Масті</a>
+        <a href="terminology.html">Термінологія</a>
+        <a href="sport.html">Кінний спорт</a>
+      </div>
+    </div>
+    <div>
+      <h2 class="footer-title">Про проєкт</h2>
+      <div class="footer-links">
+        <a href="facts.html">Цікаві факти</a>
+        <a href="stories.html">Історії</a>
+        <a href="sources.html">Використані джерела</a>
+      </div>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>© <span data-year></span> Кіннопис</span>
+    <span>Статичний сайт для GitHub Pages і Vercel</span>
+  </div>
+</footer>
+<button class="back-to-top" type="button" aria-label="Повернутися нагору">↑</button>
+<script src="js/main.js"></script>
+<script src="js/breeds.js"></script>
+</body>
+</html>
