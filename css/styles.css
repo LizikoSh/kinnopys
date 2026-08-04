@@ -1889,11 +1889,22 @@ select { font: inherit; }
 
 /* Desktop hero horse adjustment */
 @media (min-width: 861px) {
+  .home-page .hero-card {
+    width: 72%;
+    height: clamp(600px, calc(100svh - 150px), 720px);
+    min-height: 600px;
+  }
+
+  .home-page .hero-content {
+    min-height: 600px;
+    padding-bottom: 56px;
+  }
+
   .home-page .hero-image-wrap {
-    top: -92px;
-    right: -40%;
+    top: -76px;
+    right: -39%;
     width: 100%;
-    height: calc(100% + 92px);
+    height: calc(100% + 76px);
   }
 
   .home-page .hero-image {
@@ -1904,10 +1915,21 @@ select { font: inherit; }
 }
 
 @media (min-width: 861px) and (max-width: 1080px) {
+  .home-page .hero-card {
+    width: 74%;
+    height: clamp(570px, calc(100svh - 150px), 640px);
+    min-height: 570px;
+  }
+
+  .home-page .hero-content {
+    min-height: 570px;
+    padding-bottom: 48px;
+  }
+
   .home-page .hero-image-wrap {
-    top: -60px;
-    right: -44%;
+    top: -44px;
+    right: -43%;
     width: 108%;
-    height: calc(100% + 60px);
+    height: calc(100% + 44px);
   }
 }
