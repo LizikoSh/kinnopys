@@ -31,6 +31,7 @@
     const descriptionElement = randomBreedFocus.querySelector("[data-random-breed-description]");
     const factsElement = randomBreedFocus.querySelector("[data-random-breed-facts]");
     const linkElement = randomBreedFocus.querySelector("[data-random-breed-link]");
+    const imageElement = document.querySelector("[data-random-breed-image]");
     const lastFocusKey = "kinnopys-last-focus-breed";
 
     const storage = (() => {
@@ -67,6 +68,10 @@
       if (nameElement) nameElement.textContent = breed.nameUk;
       if (descriptionElement) descriptionElement.textContent = breed.description;
       if (linkElement) linkElement.setAttribute("href", `breeds.html#breed-${breed.slug}`);
+      if (imageElement) {
+        imageElement.src = breed.image;
+        imageElement.alt = breed.imageAlt || breed.nameUk;
+      }
       if (factsElement) {
         factsElement.innerHTML = "";
         addFact(1, "Походження", breed.origin);
