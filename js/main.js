@@ -25,6 +25,72 @@
     if (href === currentFile || isBreedPage) link.classList.add("is-active");
   });
 
+  const randomBreedFocus = document.querySelector("[data-random-breed-focus]");
+  if (randomBreedFocus) {
+    const nameElement = randomBreedFocus.querySelector("[data-random-breed-name]");
+    const descriptionElement = randomBreedFocus.querySelector("[data-random-breed-description]");
+    const factsElement = randomBreedFocus.querySelector("[data-random-breed-facts]");
+    const linkElement = randomBreedFocus.querySelector("[data-random-breed-link]");
+    const lastFocusKey = "kinnopys-last-focus-breed";
+
+    const storage = (() => {
+      try {
+        return window.localStorage;
+      } catch {
+        return null;
+      }
+    })();
+
+    const hasPhoto = (breed) => typeof breed.image === "string" && breed.image.trim().length > 0;
+    const pickBreed = (breeds) => {
+      const lastSlug = storage?.getItem(lastFocusKey);
+      const candidates = breeds.length > 1 ? breeds.filter((breed) => breed.slug !== lastSlug) : breeds;
+      return candidates[Math.floor(Math.random() * candidates.length)];
+    };
+
+    const addFact = (number, label, value) => {
+      if (!factsElement || !value) return;
+      const item = document.createElement("div");
+      const numberElement = document.createElement("span");
+      const copyElement = document.createElement("span");
+      const labelElement = document.createElement("strong");
+
+      numberElement.className = "feature-number";
+      numberElement.textContent = String(number);
+      labelElement.textContent = label;
+      copyElement.append(labelElement, value);
+      item.append(numberElement, copyElement);
+      factsElement.append(item);
+    };
+
+    const renderFocusBreed = (breed) => {
+      if (nameElement) nameElement.textContent = breed.nameUk;
+      if (descriptionElement) descriptionElement.textContent = breed.description;
+      if (linkElement) linkElement.setAttribute("href", `breeds.html#breed-${breed.slug}`);
+      if (factsElement) {
+        factsElement.innerHTML = "";
+        addFact(1, "Походження", breed.origin);
+        addFact(2, "Тип / група", breed.type);
+        addFact(3, "Використання", breed.use);
+      }
+      storage?.setItem(lastFocusKey, breed.slug);
+    };
+
+    fetch("data/breeds.json")
+      .then((response) => {
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        return response.json();
+      })
+      .then((breeds) => {
+        if (!Array.isArray(breeds)) return;
+        const breedsWithPhotos = breeds.filter(hasPhoto);
+        if (breedsWithPhotos.length) renderFocusBreed(pickBreed(breedsWithPhotos));
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }
+
   const glossaryInput = document.querySelector("#glossary-search");
   const glossaryItems = document.querySelectorAll("[data-glossary]");
   const emptyState = document.querySelector("#glossary-empty");
