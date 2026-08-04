@@ -1889,22 +1889,26 @@ select { font: inherit; }
 
 /* Desktop hero horse adjustment */
 @media (min-width: 861px) {
+  .home-page .home-hero {
+    padding-bottom: 64px;
+  }
+
   .home-page .hero-card {
     width: 72%;
-    height: clamp(600px, calc(100svh - 150px), 720px);
-    min-height: 600px;
+    height: clamp(540px, calc(100svh - 220px), 660px);
+    min-height: 540px;
   }
 
   .home-page .hero-content {
-    min-height: 600px;
-    padding-bottom: 56px;
+    min-height: 540px;
+    padding-bottom: 48px;
   }
 
   .home-page .hero-image-wrap {
-    top: -76px;
+    top: -64px;
     right: -39%;
     width: 100%;
-    height: calc(100% + 76px);
+    height: calc(100% + 64px);
   }
 
   .home-page .hero-image {
@@ -1915,21 +1919,25 @@ select { font: inherit; }
 }
 
 @media (min-width: 861px) and (max-width: 1080px) {
+  .home-page .home-hero {
+    padding-bottom: 54px;
+  }
+
   .home-page .hero-card {
     width: 74%;
-    height: clamp(570px, calc(100svh - 150px), 640px);
-    min-height: 570px;
+    height: clamp(500px, calc(100svh - 220px), 580px);
+    min-height: 500px;
   }
 
   .home-page .hero-content {
-    min-height: 570px;
-    padding-bottom: 48px;
+    min-height: 500px;
+    padding-bottom: 40px;
   }
 
   .home-page .hero-image-wrap {
-    top: -44px;
+    top: -36px;
     right: -43%;
     width: 108%;
-    height: calc(100% + 44px);
+    height: calc(100% + 36px);
   }
 }
