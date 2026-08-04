@@ -31,7 +31,7 @@
     const descriptionElement = randomBreedFocus.querySelector("[data-random-breed-description]");
     const factsElement = randomBreedFocus.querySelector("[data-random-breed-facts]");
     const linkElement = randomBreedFocus.querySelector("[data-random-breed-link]");
-    const imageElement = document.querySelector("[data-random-breed-image]");
+    const imageElement = randomBreedFocus.querySelector("[data-random-breed-image]");
     const lastFocusKey = "kinnopys-last-focus-breed";
 
     const storage = (() => {
